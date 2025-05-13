@@ -4,7 +4,7 @@
 node.js + Expressで制作したフィボナッチ数列を返すAPIです.
 0以上の数値を受け付け，値を返します
 
-# endエンドポイントのURL
+# エンドポイントのURL
 https://fibonacci-api-44gz.onrender.com
 
 # ディレクトリ構成
@@ -24,6 +24,6 @@ fib_api/
 # ディレクトリ構成の参考にしたURL
 https://sreake.com/blog/directory-structure-good-practice/
 
-# 仕様技術
+# 使用技術
 ・node.js
 ・Express
