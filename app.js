@@ -1,7 +1,8 @@
 // JavaScript source code
 const express = require('express'); //Node.jsのexpress（フレームワーク？）を読み込む
 const app = express();//app作る
-const fibonaciRouter = require('./routes/fibonacci'); //fibonacciどのURLに来たらどの処理をするか
+
+const fibonaciRouter = require('./routes/fibonacci'); //fibonacciURLに来たらどの処理をするか
 const errorHandler = require('./middlewares/errorHandler');//fibonacci に来たリクエストを専用のファイルに送って処理
 
 app.use(express.json());//JSONデータを読み込む
