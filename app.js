@@ -1,16 +1,17 @@
 // JavaScript source code
-const express = require('express'); //Node.js‚ÌexpressiƒtƒŒ[ƒ€ƒ[ƒNHj‚ğ“Ç‚İ‚Ş
-const app = express();//appì‚é
+const express = require('express'); //Node.jsã®expressï¼ˆãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ï¼Ÿï¼‰ã‚’èª­ã¿è¾¼ã‚€
+const app = express();//appä½œã‚‹
 
-const fibonaciRouter = require('./routes/fibonacci'); //fibonacciURL‚É—ˆ‚½‚ç‚Ç‚Ìˆ—‚ğ‚·‚é‚©
-const errorHandler = require('./middlewares/errorHandler');//fibonacci ‚É—ˆ‚½ƒŠƒNƒGƒXƒg‚ğê—p‚Ìƒtƒ@ƒCƒ‹‚É‘—‚Á‚Äˆ—
+const fibonaciRouter = require('./routes/fibonacci'); //fibonacciURLã«æ¥ãŸã‚‰ã©ã®å‡¦ç†ã‚’ã™ã‚‹ã‹
+const errorHandler = require('./middlewares/errorHandler');//fibonacci ã«æ¥ãŸãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’å°‚ç”¨ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«é€ã£ã¦å‡¦ç†
 
-app.use(express.json());//JSONƒf[ƒ^‚ğ“Ç‚İ‚Ş
-app.use('/fib',fibonaciRouter);//fibonaccRouter ‚É“n‚·‚æ‚¤‚Éİ’è‚·‚é
+app.use(express.json());//JSONãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
+app.use('/fib',fibonaciRouter);//fibonaccRouter ã«æ¸¡ã™ã‚ˆã†ã«è¨­å®šã™ã‚‹
 
-app.use(errorHandler);//ƒGƒ‰[‚ªo‚½‚Ì•Ô‚µ‚ª‘‚©‚ê‚Ä‚éDÅŒã‚Éˆ—H‚·‚é‚Æ‚¢‚¢
+app.use(errorHandler);//ã‚¨ãƒ©ãƒ¼ãŒå‡ºãŸæ™‚ã®è¿”ã—ãŒæ›¸ã‹ã‚Œã¦ã‚‹ï¼æœ€å¾Œã«å‡¦ç†ï¼Ÿã™ã‚‹ã¨ã„ã„
 
-const PORT = process.env.PORT || 3000; //ƒT[ƒo[‹N“®
+const PORT = process.env.PORT || 3000; //ã‚µãƒ¼ãƒãƒ¼èµ·å‹•
 app.listen(PORT,()=>{
 	console.log(`Server running on http://localhost:${PORT}`);
 });
+module.exports = app;//â† ãƒ†ã‚¹ãƒˆç”¨ã«export
