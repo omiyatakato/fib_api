@@ -1,0 +1,29 @@
+# タイトル：Fibonacci API
+
+# 説明
+node.js + Expressで制作したフィボナッチ数列を返すAPIです.
+0以上の数値を受け付け，値を返します
+
+# endエンドポイントのURL
+https://fibonacci-api-44gz.onrender.com
+
+# ディレクトリ構成
+
+fib_api/
+├── app.js                 // サーバーの設定
+├── routes/
+│   └── fibonacci.js       // 中継点
+├── controllers/
+│   └── fibonacci_create.js// 受け付けた値が計算に使えるかを判別
+├── services/
+│   └── fibonacciCalc.js   // フィボナッチ数列の計算
+│ 
+├── middlewares/
+    └──errorHandler //予想外のエラーが起きた時に使われる
+
+# ディレクトリ構成の参考にしたURL
+https://sreake.com/blog/directory-structure-good-practice/
+
+# 仕様技術
+・node.js
+・Express
