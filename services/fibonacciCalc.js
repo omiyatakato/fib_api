@@ -1,12 +1,12 @@
 // JavaScript source code
 const calcFibonacci = (n) =>{
-	if(n<=1) return n;//‚P”Ô–ÚˆÈ‰º‚Ì€‚È‚çn‚ð•Ô‚·‚¾‚¯‚ÅOK
+	if (n <= 1) return BigInt(n);//BigIntã¯å¤§ããªæ•´æ•°å°‚ç”¨ï¼C++ã®lonlongã¨åŒã˜ç”¨é€”ï¼
 
-	let a=0,b=1;
+	let a = BigInt(0), b = BigInt(1);//BigIntã¯å¤§ããªæ•´æ•°å°‚ç”¨ï¼C++ã®lonlongã¨åŒã˜ç”¨é€”ï¼
 	for(let i=2; i<=n;i++){
-		const value=a+b;//2ŒÂ‘O‚Ì”“¯Žm‚ð‘«‚·
-		a=b; //‘O‚Ì”‘ã“ü
-		b=value;//ŽŸ‚Ì’l‘ã“ü
+		const value=a+b;//2å€‹å‰ã®æ•°åŒå£«ã‚’è¶³ã™
+		a=b; //å‰ã®æ•°ä»£å…¥
+		b=value;//æ¬¡ã®å€¤ä»£å…¥
 	}
 	return b;
 }
