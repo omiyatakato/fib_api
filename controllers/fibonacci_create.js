@@ -9,7 +9,7 @@ exports.GetFibonaci_Kueri = (req, res, next) => {
 			return res.status(400).json({message:'Bad request'});//エラー内容表示
 		}
 		const result = calcFibonacci(n); //正常な値が入力されたら，関数呼び出し解を得る
-		res.json({n,result});//JSONに返す.書き込む（？）処理
+		res.json({result});//JSONに返す.書き込む（？）処理
 	}
 	catch(err){//catchは処理を止めずに最後に処理してくれる
 		next(err);//エラーポイントに渡す
