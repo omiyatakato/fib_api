@@ -5,7 +5,7 @@ describe('GET /fib', () => {
       test('正しい入力（n=10）で正しいレスポンスを返す', async () => {
         const res = await request(app).get('/fib?n=10');//n=10を送り待つ
         expect(res.statusCode).toBe(200);//expectはこの値はこうであるべきをチェックする
-        expect(res.body).toEqual({"result":55});
+        expect(res.body).toEqual({"result":55});//"result":55が帰ってくると想定
       });
       test('正しい入力（n=-1）で正しいレスポンスを返す', async () => {
         const res = await request(app).get('/fib?n=-1');
