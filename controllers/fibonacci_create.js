@@ -1,17 +1,17 @@
 // JavaScript source code
-const {calcFibonacci} = require('../services/fibonacciCalc');//calcFibonacciŠÖ”“Ç‚İ‚İ
+const {calcFibonacci} = require('../services/fibonacciCalc');//calcFibonaccié–¢æ•°èª­ã¿è¾¼ã¿
 
 exports.GetFibonaci_Kueri = (req, res, next) => {
 	try {
-		const n = parseInt(req.query.n, 10);//params•¶š—ñ‚ğ®”‚É•ÏŠ·
-								//ª‚±‚ê‚Íƒ†[ƒU[‚ª‘—‚Á‚½ƒf[ƒ^‚ğƒT[ƒo‚É“n‚µ‚·‚à‚ÌDƒf[ƒ^‚ÉƒAƒNƒZƒX‚Å‚«‚é query‚Í/fib?n=10‚É‘Î‰
-		if (!Number.isInteger(n) || n < 0) {//ƒGƒ‰[‚Ì”»•Êi•¶š‚¶‚á‚È‚¢,0–¢–CãŒÀ‚¢‚éH‚í‚©‚ç‚Êj
-			return res.status(400).json({error:'aaa•¶š‚Å“ü—Í‚³‚ê‚½C‚ ‚é‚¢‚Í0ˆÈ‰º‚¾‚Á‚½'});//ƒGƒ‰[“à—e•\¦
+		const n = parseInt(req.query.n, 10);//paramsæ–‡å­—åˆ—ã‚’æ•´æ•°ã«å¤‰æ›
+								//â†‘ã“ã‚Œã¯ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒé€ã£ãŸãƒ‡ãƒ¼ã‚¿ã‚’ã‚µãƒ¼ãƒã«æ¸¡ã—ã™ã‚‚ã®ï¼ãƒ‡ãƒ¼ã‚¿ã«ã‚¢ã‚¯ã‚»ã‚¹ã§ãã‚‹ queryã¯/fib?n=10ã«å¯¾å¿œ
+		if (!Number.isInteger(n) || n < 0) {//ã‚¨ãƒ©ãƒ¼ã®åˆ¤åˆ¥ï¼ˆæ–‡å­—ã˜ã‚ƒãªã„,0æœªæº€ï¼Œä¸Šé™ã„ã‚‹ï¼Ÿã‚ã‹ã‚‰ã¬ï¼‰
+			return res.status(400).json({message:'Bad request'});//ã‚¨ãƒ©ãƒ¼å†…å®¹è¡¨ç¤º
 		}
-		const return_value = calcFibonacci(n); //³í‚È’l‚ª“ü—Í‚³‚ê‚½‚çCŠÖ”ŒÄ‚Ño‚µ‰ğ‚ğ“¾‚é
-		res.json({n,return_value});//JSON‚É•Ô‚·.‘‚«‚ŞiHjˆ—
+		const return_value = calcFibonacci(n); //æ­£å¸¸ãªå€¤ãŒå…¥åŠ›ã•ã‚ŒãŸã‚‰ï¼Œé–¢æ•°å‘¼ã³å‡ºã—è§£ã‚’å¾—ã‚‹
+		res.json({n,return_value});//JSONã«è¿”ã™.æ›¸ãè¾¼ã‚€ï¼ˆï¼Ÿï¼‰å‡¦ç†
 	}
-	catch(err){//catch‚Íˆ—‚ğ~‚ß‚¸‚ÉÅŒã‚Éˆ—‚µ‚Ä‚­‚ê‚é
-		next(err);//ƒGƒ‰[ƒ|ƒCƒ“ƒg‚É“n‚·
+	catch(err){//catchã¯å‡¦ç†ã‚’æ­¢ã‚ãšã«æœ€å¾Œã«å‡¦ç†ã—ã¦ãã‚Œã‚‹
+		next(err);//ã‚¨ãƒ©ãƒ¼ãƒã‚¤ãƒ³ãƒˆã«æ¸¡ã™
 	}
 };
