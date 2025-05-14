@@ -1,18 +1,18 @@
 // JavaScript source code
-const request = require('supertest');
+const request = require('supertest');//Webã‚µãƒ¼ãƒãƒ¼ã‚’æ“¬ä¼¼çš„ã«å©ã„ã¦ãƒ†ã‚¹ãƒˆã§ãã‚‹ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
 const app = require('../app');
 describe('GET /fib', () => {
-      test('³‚µ‚¢“ü—Íin=10j‚Å³‚µ‚¢ƒŒƒXƒ|ƒ“ƒX‚ð•Ô‚·', async () => {
-        const res = await request(app).get('/fib?n=10');
-        expect(res.statusCode).toBe(200);
-        expect(res.body).toEqual({ n: 10, return_value: 55 });
+      test('æ­£ã—ã„å…¥åŠ›ï¼ˆn=10ï¼‰ã§æ­£ã—ã„ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã‚’è¿”ã™', async () => {
+        const res = await request(app).get('/fib?n=10');//n=10ã‚’é€ã‚Šå¾…ã¤
+        expect(res.statusCode).toBe(200);//expectã¯ã“ã®å€¤ã¯ã“ã†ã§ã‚ã‚‹ã¹ãã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
+        expect(res.body).toEqual({"result":55});
       });
-      test('³‚µ‚¢“ü—Íin=-1j‚Å³‚µ‚¢ƒŒƒXƒ|ƒ“ƒX‚ð•Ô‚·', async () => {
+      test('æ­£ã—ã„å…¥åŠ›ï¼ˆn=-1ï¼‰ã§æ­£ã—ã„ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã‚’è¿”ã™', async () => {
         const res = await request(app).get('/fib?n=-1');
         expect(res.statusCode).toBe(400);
         expect(res.body.error).toBeDefined();
       });
-      test('•¶Žš—ñ‚Ì“ü—Íin=abcj‚Å400ƒGƒ‰[‚ð•Ô‚·', async () => {
+      test('æ–‡å­—åˆ—ã®å…¥åŠ›ï¼ˆn=abcï¼‰ã§400ã‚¨ãƒ©ãƒ¼ã‚’è¿”ã™', async () => {
         const res = await request(app).get('/fib?n=abc');
         expect(res.statusCode).toBe(400);
         expect(res.body.error).toBeDefined();
