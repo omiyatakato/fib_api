@@ -8,8 +8,8 @@ exports.GetFibonaci_Kueri = (req, res, next) => {
 		if (!Number.isInteger(n) || n < 0) {//エラーの判別（文字じゃない,0未満，上限いる？わからぬ）
 			return res.status(400).json({message:'Bad request'});//エラー内容表示
 		}
-		const return_value = calcFibonacci(n); //正常な値が入力されたら，関数呼び出し解を得る
-		res.json({n,return_value});//JSONに返す.書き込む（？）処理
+		const result = calcFibonacci(n); //正常な値が入力されたら，関数呼び出し解を得る
+		res.json({n,result});//JSONに返す.書き込む（？）処理
 	}
 	catch(err){//catchは処理を止めずに最後に処理してくれる
 		next(err);//エラーポイントに渡す
